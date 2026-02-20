@@ -1,0 +1,128 @@
+/* Hero Section Styles */
+.hero-section {
+    background-color: #FFFFFF;
+    padding: 4rem 0;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.hero-headline {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333333;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.hero-subheadline {
+    font-size: 1.125rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+.hero-cta-button {
+    background-color: #0066CC;
+    color: #FFFFFF;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+    align-self: flex-start;
+}
+
+.hero-cta-button:hover {
+    background-color: #0052A3;
+    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.35);
+    transform: translateY(-2px);
+}
+
+.hero-cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+}
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.hero-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.placeholder-text {
+    position: absolute;
+    color: #999999;
+    font-size: 1.25rem;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+/* Hide placeholder text when image is loaded */
+.hero-image-placeholder:has(img[src*="/"]:not([src*="path/to"])) .placeholder-text {
+    display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 0;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+
+    .hero-headline {
+        font-size: 2rem;
+    }
+
+    .hero-subheadline {
+        font-size: 1rem;
+    }
+
+    .hero-cta-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-image-container {
+        height: 300px;
+    }
+}

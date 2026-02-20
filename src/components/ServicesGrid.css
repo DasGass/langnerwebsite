@@ -1,0 +1,33 @@
+/* Services Section Styles */
+.services-section {
+    background-color: #F5F5F5;
+    padding: 4rem 0;
+}
+
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .services-section {
+        padding: 3rem 0;
+    }
+
+    .services-container {
+        padding: 0 1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}

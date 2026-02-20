@@ -1,0 +1,83 @@
+/* Trust Banner Styles */
+.trust-banner {
+    background-color: #E6F2FF;
+    padding: 3rem 0;
+}
+
+.trust-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.trust-headline {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333333;
+    letter-spacing: -0.02em;
+}
+
+.trust-text {
+    font-size: 1.125rem;
+    color: #666666;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+.trust-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.stars {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: #0066CC;
+}
+
+.star.filled {
+    color: #0066CC;
+}
+
+.rating-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0066CC;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .trust-banner {
+        padding: 2.5rem 0;
+    }
+
+    .trust-container {
+        padding: 0 1rem;
+    }
+
+    .trust-headline {
+        font-size: 1.75rem;
+    }
+
+    .trust-text {
+        font-size: 1rem;
+    }
+
+    .star {
+        font-size: 1.25rem;
+    }
+
+    .rating-text {
+        font-size: 1.125rem;
+    }
+}
