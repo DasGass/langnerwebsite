@@ -1,34 +1,102 @@
 import React from 'react';
 import './HeroSection.css';
 
-const HeroSection = () => {
-    const handleCTA = () => {
-        // Add your form or contact logic here
-        console.log('Hilfe anfordern clicked');
-    };
+const PhoneIcon = () => (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" />
+    </svg>
+);
 
+const MailIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+        <polyline points="22,6 12,13 2,6" />
+    </svg>
+);
+
+const HeroSection = () => {
     return (
-        <section className="hero-section">
-            <div className="hero-container">
+        <section className="hero">
+            <div className="hero-inner">
                 <div className="hero-content">
-                    <h1 className="hero-headline">
-                        Wasserschaden? Wir retten Ihr Zuhause.
-                    </h1>
-                    <p className="hero-subheadline">
-                        Ihr lokaler Experte im Rhein-Sieg-Kreis. Schnell, sauber und alles aus einer Hand.
+                    <div className="hero-badge">
+                        <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+                            <circle cx="5" cy="5" r="5" />
+                        </svg>
+                        24/7 Notdienst verfügbar
+                    </div>
+                    <h1>Wasserschaden? Wir retten <span>Ihr Zuhause.</span></h1>
+                    <p className="hero-sub">
+                        Ihr lokaler Experte im Rhein-Sieg-Kreis. Schnell, sauber und alles aus einer Hand –
+                        von der Leckageortung über Bautrocknung bis zur kompletten Renovierung.
                     </p>
-                    <button className="hero-cta-button" onClick={handleCTA}>
-                        Hilfe anfordern
-                    </button>
-                </div>
-                <div className="hero-image-container">
-                    <div className="hero-image-placeholder">
-                        {/* Hero image - update the src path if you move the image file */}
+
+                    {/* Desktop CTA */}
+                    <div className="hero-actions">
+                        <a href="tel:+4901511202299" className="btn btn-lg">
+                            <PhoneIcon />
+                            Jetzt Hilfe anfordern
+                        </a>
+                        <a href="#versicherung" className="btn btn-lg btn-outline">Versicherungsfall?</a>
+                    </div>
+
+                    {/* Mobile hero image */}
+                    <div className="hero-img hero-img-mobile">
                         <img
-                            src="/images/hero/upscalemedia-transformed.jpeg"
+                            src="/images/hero/tims.jpg"
                             alt="Wasserschadensanierung"
-                            className="hero-image"
+                            onError={(e) => { e.target.style.background = '#F5F7FA'; e.target.style.height = '220px'; }}
                         />
+                        <div className="hero-img-badge">
+                            <span className="hero-img-badge-icon">⚡</span>
+                            <div className="hero-img-badge-text">
+                                Schnelle Reaktion
+                                <span>Vor Ort in 60 Min.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Mobile CTA stack */}
+                    <div className="cta-stack">
+                        <a href="tel:+4901511202299" className="btn-primary-mobile">
+                            <PhoneIcon />
+                            Jetzt Hilfe anfordern – 0151 1202 2996
+                        </a>
+                        <a href="mailto:info@langner-gm.de" className="btn-secondary-mobile">
+                            <MailIcon />
+                            E-Mail: info@langner-gm.de
+                        </a>
+                    </div>
+
+                    {/* Insurance highlight */}
+                    <div className="hero-insurance">
+                        <span className="hero-insurance-icon">🛡️</span>
+                        <div className="hero-insurance-text">
+                            Versicherungsfall? Wir regeln alles für Sie.
+                            <span>Direkte Abrechnung mit Ihrer Versicherung – für Sie entstehen keine Kosten.</span>
+                        </div>
+                    </div>
+
+                    {/* Trust rating */}
+                    <div className="hero-trust">
+                        <span className="hero-trust-stars">★★★★★</span>
+                        <span className="hero-trust-text"><strong>4.8/5</strong> – Über 200 zufriedene Kunden im Rhein-Sieg-Kreis</span>
+                    </div>
+                </div>
+
+                {/* Desktop hero image */}
+                <div className="hero-img hero-img-desktop">
+                    <img
+                        src="/images/hero/tims.jpg"
+                        alt="Professionelle Wasserschadensanierung"
+                        onError={(e) => { e.target.style.background = '#F5F7FA'; }}
+                    />
+                    <div className="hero-img-badge">
+                        <span className="hero-img-badge-icon">⚡</span>
+                        <div className="hero-img-badge-text">
+                            Schnelle Reaktion
+                            <span>Vor Ort in 60 Min.</span>
+                        </div>
                     </div>
                 </div>
             </div>

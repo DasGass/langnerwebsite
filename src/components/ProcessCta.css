@@ -1,0 +1,90 @@
+/* ══════════════════════════════════════════════
+   Process CTA — 4-breakpoint responsive
+   ══════════════════════════════════════════════ */
+.process-cta {
+    background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
+    padding: clamp(2rem, 3vw + 0.5rem, 3rem) 0;
+    text-align: center;
+    color: #fff;
+}
+
+.process-cta h2 {
+    font-size: clamp(1.15rem, 1.5vw + 0.3rem, 1.75rem);
+    font-weight: 800;
+    margin-bottom: clamp(0.5rem, 0.7vw, 0.75rem);
+}
+
+.process-cta p {
+    font-size: clamp(0.82rem, 0.6vw + 0.45rem, 1rem);
+    opacity: 0.85;
+    margin-bottom: clamp(1rem, 1.5vw, 1.5rem);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+/* ── CTA buttons wrapper ── */
+.process-cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* ── Desktop button ── */
+.process-cta-btn-desktop {
+    padding: clamp(0.8rem, 1vw + 0.2rem, 1rem) clamp(1.5rem, 2vw + 0.3rem, 2.5rem);
+}
+
+/* ── Mobile button — hidden by default ── */
+.process-cta-btn-mobile {
+    display: none !important;
+}
+
+/* ── Common CTA button style ── */
+.btn-primary-cta {
+    background: #fff;
+    color: var(--blue);
+    border: none;
+    padding: clamp(0.8rem, 1vw + 0.2rem, 1rem) clamp(1.5rem, 2vw + 0.3rem, 2.5rem);
+    font-size: clamp(0.9rem, 0.6vw + 0.5rem, 1rem);
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.btn-primary-cta:hover {
+    background: #f0f7ff;
+    transform: translateY(-1px);
+}
+
+/* Wide */
+@media (min-width: 1441px) {
+    .process-cta {
+        padding: 3.5rem 0;
+    }
+}
+
+/* Mobile (<768) */
+@media (max-width: 767px) {
+    .process-cta {
+        padding: 2rem var(--space-container);
+    }
+
+    .process-cta-btn-desktop {
+        display: none !important;
+    }
+
+    .process-cta-btn-mobile {
+        display: inline-flex !important;
+    }
+}

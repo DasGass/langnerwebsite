@@ -594,6 +594,151 @@
             color: #9CA3AF;
             text-decoration: none;
         }
+
+        /* ── Insurance highlight ── */
+        .hero-insurance {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, #ECFDF5 0%, #F0FDF4 100%);
+            border: 1px solid #A7F3D0;
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+        }
+
+        .hero-insurance-icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .hero-insurance-text {
+            font-size: 0.82rem;
+            color: #065F46;
+            font-weight: 600;
+            line-height: 1.35;
+        }
+
+        .hero-insurance-text span {
+            font-weight: 400;
+            color: #047857;
+            display: block;
+            font-size: 0.75rem;
+        }
+
+        /* ── Featured service ── */
+        .service-card.featured {
+            border: 2px solid var(--blue);
+            background: linear-gradient(135deg, #F0F7FF 0%, #FFFFFF 100%);
+            position: relative;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -0.5rem;
+            right: 0.75rem;
+            background: var(--blue);
+            color: #fff;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.15rem 0.5rem;
+            border-radius: 999px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .service-card.featured .service-icon {
+            background: var(--blue);
+            color: #fff;
+        }
+
+        /* ── Process CTA ── */
+        .process-cta {
+            background: linear-gradient(135deg, #003D80 0%, var(--blue) 100%);
+            padding: 2rem 1rem;
+            text-align: center;
+            color: #fff;
+            border-radius: 0;
+        }
+
+        .process-cta h3 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .process-cta p {
+            font-size: 0.85rem;
+            opacity: 0.85;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .process-cta .btn-primary {
+            background: #fff;
+            color: var(--blue);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ── Contact form ── */
+        .contact-form-mobile {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.25rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            margin-top: 1.5rem;
+        }
+
+        .contact-form-mobile h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--grey-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-form-mobile>p {
+            font-size: 0.8rem;
+            color: var(--grey-mid);
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 0.75rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--grey-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.7rem 0.85rem;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--grey-dark);
+            background: #FAFBFC;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
     </style>
 </head>
 
@@ -659,6 +804,14 @@
             </svg>
             E-Mail: info@langner-gm.de
         </a>
+        <!-- Insurance highlight -->
+        <div class="hero-insurance">
+            <span class="hero-insurance-icon">🛡️</span>
+            <div class="hero-insurance-text">
+                Versicherungsfall? Wir regeln alles für Sie.
+                <span>Direkte Abrechnung mit Ihrer Versicherung – für Sie entstehen keine Kosten.</span>
+            </div>
+        </div>
     </div>
 
     <!-- Rating -->
@@ -681,7 +834,8 @@
         <h2 class="section-title">Alles aus einer Hand</h2>
         <p class="section-sub">Von der Schadensfeststellung bis zur vollständigen Wiederherstellung.</p>
         <div class="services-list">
-            <div class="service-card">
+            <div class="service-card featured">
+                <span class="featured-badge">Kernkompetenz</span>
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" />
@@ -716,7 +870,8 @@
                     <p>Fachgerechte Schimmelentfernung mit umweltfreundlichen Produkten.</p>
                 </div>
             </div>
-            <div class="service-card">
+            <div class="service-card featured">
+                <span class="featured-badge">Kernkompetenz</span>
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
@@ -751,21 +906,6 @@
                     <p>Vollständige Wiederherstellung – Verspachtelung, Malerarbeiten und mehr.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Extra services -->
-    <section class="section">
-        <p class="section-label">Weitere Angebote</p>
-        <h2 class="section-title">Mehr als nur Wasserschaden</h2>
-        <p class="section-sub">Langner GM bietet ein breites Spektrum an Gebäudemanagement-Leistungen.</p>
-        <div class="extra-grid">
-            <div class="extra-card"><span class="extra-icon">🌿</span> Grünpflege</div>
-            <div class="extra-card"><span class="extra-icon">☀️</span> Solarreinigung</div>
-            <div class="extra-card"><span class="extra-icon">🏗️</span> Neubautrocknung</div>
-            <div class="extra-card"><span class="extra-icon">🔧</span> Gerätevermietung</div>
-            <div class="extra-card"><span class="extra-icon">🏠</span> Immobilien-Instandhaltung</div>
-            <div class="extra-card"><span class="extra-icon">🔍</span> Feuchtigkeitsmessungen</div>
         </div>
     </section>
 
@@ -806,6 +946,19 @@
         </div>
     </section>
 
+    <!-- Process CTA -->
+    <div class="process-cta">
+        <h3>Bereit für schnelle Hilfe?</h3>
+        <p>Kontaktieren Sie uns jetzt – kostenlose Erstberatung und sofortige Hilfe bei Wasserschaden.</p>
+        <a href="tel:+4901511202299" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" />
+            </svg>
+            Jetzt anrufen
+        </a>
+    </div>
+
     <!-- Trust / Insurance -->
     <section class="section section-blue" id="versicherung">
         <p class="section-label">Versicherungsabwicklung</p>
@@ -834,7 +987,7 @@
                 <div class="trust-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                         <polyline points="20 6 9 17 4 12" />
                     </svg></div>
-                Umweltfreundliche Produkte & nachhaltige Arbeitsweise
+                Schnelle Bearbeitung – Ihr Versicherungsfall ist in guten Händen
             </div>
         </div>
         <div class="stats-grid">
@@ -861,7 +1014,7 @@
     <section class="section" id="kontakt">
         <p class="section-label">Kontakt</p>
         <h2 class="section-title">Wir sind für Sie da</h2>
-        <p class="section-sub">Erreichen Sie uns jederzeit – per Telefon, E-Mail oder besuchen Sie uns in Eitorf.</p>
+        <p class="section-sub">Erreichen Sie uns jederzeit – per Telefon, E-Mail oder senden Sie eine Anfrage.</p>
         <div class="contact-list">
             <a href="tel:+4901511202299" class="contact-item" style="text-decoration:none;">
                 <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -871,7 +1024,7 @@
                 <div>
                     <div class="contact-label">Notdienst (24/7)</div>
                     <div class="contact-value">0151 1202 2996</div>
-                    <div class="contact-sub">Auch Wochenenden & Feiertage</div>
+                    <div class="contact-sub">Auch Wochenenden &amp; Feiertage</div>
                 </div>
             </a>
             <a href="tel:+4902243845683" class="contact-item" style="text-decoration:none;">
@@ -908,13 +1061,57 @@
                 </div>
             </div>
         </div>
-        <a href="tel:+4901511202299" class="btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path
-                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" />
-            </svg>
-            Jetzt anrufen – 0151 1202 2996
-        </a>
+        <!-- Rückruf form -->
+        <div class="contact-form-mobile">
+            <h3>Rückruf anfordern</h3>
+            <p>Wir melden uns schnellstmöglich bei Ihnen.</p>
+            <form id="mobile-contact-form"
+                onsubmit="event.preventDefault(); document.getElementById('m-form-success').style.display='flex'; this.style.display='none';">
+                <div class="form-group">
+                    <label for="m-contact-name">Name *</label>
+                    <input type="text" id="m-contact-name" placeholder="Ihr Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="m-contact-phone">Telefon *</label>
+                    <input type="tel" id="m-contact-phone" placeholder="Ihre Telefonnummer" required>
+                </div>
+                <div class="form-group">
+                    <label for="m-contact-type">Art des Schadens</label>
+                    <select id="m-contact-type">
+                        <option value="">Bitte wählen...</option>
+                        <option value="wasserschaden">Wasserschaden</option>
+                        <option value="leckage">Leckage / Rohrbruch</option>
+                        <option value="schimmel">Schimmelbefall</option>
+                        <option value="trocknung">Bautrocknung</option>
+                        <option value="sonstiges">Sonstiges</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary" style="width:100%;">
+                    Rückruf anfordern
+                </button>
+            </form>
+            <div id="m-form-success"
+                style="display:none; flex-direction:column; align-items:center; gap:0.75rem; padding:1.5rem 0; text-align:center;">
+                <span style="font-size:2.5rem;">✅</span>
+                <h3 style="color:#1F2937; font-size:1rem;">Vielen Dank!</h3>
+                <p style="color:#6B7280; font-size:0.85rem;">Wir melden uns schnellstmöglich.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extra services -->
+    <section class="section section-grey">
+        <p class="section-label">Weitere Angebote</p>
+        <h2 class="section-title">Mehr als nur Wasserschaden</h2>
+        <p class="section-sub">Langner GM bietet ein breites Spektrum an Gebäudemanagement-Leistungen.</p>
+        <div class="extra-grid">
+            <div class="extra-card"><span class="extra-icon">🌿</span> Grünpflege</div>
+            <div class="extra-card"><span class="extra-icon">☀️</span> Solarreinigung</div>
+            <div class="extra-card"><span class="extra-icon">🏗️</span> Neubautrocknung</div>
+            <div class="extra-card"><span class="extra-icon">🔧</span> Gerätevermietung</div>
+            <div class="extra-card"><span class="extra-icon">🏠</span> Immobilien-Instandhaltung</div>
+            <div class="extra-card"><span class="extra-icon">🔍</span> Feuchtigkeitsmessungen</div>
+        </div>
     </section>
 
     <!-- Footer -->

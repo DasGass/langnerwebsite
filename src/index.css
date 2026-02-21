@@ -1,30 +1,245 @@
-/* Global Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ══════════════════════════════════════════════
+   Global Reset & Design Tokens
+   Breakpoints:
+     mobile  < 768px
+     tablet  768–1024px
+     desktop 1024–1440px
+     wide    > 1440px
+   ══════════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ── Colour tokens ── */
+  --blue: #0066CC;
+  --blue-dark: #0052A3;
+  --blue-light: #E6F2FF;
+  --grey-bg: #F5F7FA;
+  --grey-mid: #6B7280;
+  --grey-dark: #1F2937;
+  --white: #FFFFFF;
+
+  /* ── Fluid spacing ── */
+  --space-section: clamp(2rem, 4vw + 0.5rem, 5rem);
+  --space-container: clamp(1rem, 3vw, 1.5rem);
+
+  /* ── Fluid typography ── */
+  --fs-hero: clamp(1.75rem, 3.5vw + 0.5rem, 2.85rem);
+  --fs-section-h2: clamp(1.35rem, 2vw + 0.5rem, 2rem);
+  --fs-body: clamp(0.875rem, 0.8vw + 0.5rem, 1.05rem);
+  --fs-small: clamp(0.75rem, 0.6vw + 0.45rem, 0.875rem);
+  --fs-label: clamp(0.68rem, 0.5vw + 0.4rem, 0.78rem);
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #333333;
-    background-color: #FFFFFF;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1a1a1a;
+  background: var(--white);
+  font-size: 16px;
 }
 
 #root {
-    min-height: 100vh;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ══════════════════════════════════════════════
+   Fluid Container
+   ══════════════════════════════════════════════ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-container);
+}
+
+/* Wide screens: slightly wider container */
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   Shared Button Styles
+   ══════════════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  padding: clamp(0.6rem, 0.8vw + 0.3rem, 0.7rem) clamp(1rem, 1.5vw + 0.3rem, 1.4rem);
+  font-size: clamp(0.85rem, 0.7vw + 0.5rem, 0.95rem);
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.25);
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.btn:hover {
+  background: var(--blue-dark);
+  box-shadow: 0 4px 14px rgba(0, 102, 204, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-lg {
+  padding: clamp(0.75rem, 1vw + 0.3rem, 1rem) clamp(1.25rem, 2vw + 0.3rem, 2rem);
+  font-size: clamp(0.95rem, 0.8vw + 0.5rem, 1.1rem);
+  border-radius: 10px;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: var(--blue);
+  color: #fff;
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--blue);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-white:hover {
+  background: #f0f7ff;
+  color: var(--blue-dark);
+}
+
+/* ══════════════════════════════════════════════
+   Section Helpers (fluid)
+   ══════════════════════════════════════════════ */
+.section {
+  padding: var(--space-section) 0;
+}
+
+.section-grey {
+  background: var(--grey-bg);
+}
+
+.section-blue {
+  background: var(--blue-light);
+}
+
+.section-label {
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  font-size: var(--fs-section-h2);
+  font-weight: 800;
+  color: var(--grey-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: clamp(0.5rem, 1vw, 1rem);
+  line-height: 1.2;
+}
+
+.section-sub {
+  font-size: var(--fs-body);
+  color: var(--grey-mid);
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.section-header {
+  margin-bottom: clamp(1.5rem, 3vw, 3rem);
+}
+
+/* ══════════════════════════════════════════════
+   Form Styles (fluid)
+   ══════════════════════════════════════════════ */
+.form-group {
+  margin-bottom: clamp(0.75rem, 1vw, 1rem);
+}
+
+.form-group label {
+  display: block;
+  font-size: clamp(0.7rem, 0.5vw + 0.4rem, 0.8rem);
+  font-weight: 600;
+  color: var(--grey-dark);
+  margin-bottom: clamp(0.2rem, 0.3vw, 0.35rem);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: clamp(0.65rem, 0.7vw + 0.3rem, 0.75rem) clamp(0.8rem, 0.8vw + 0.3rem, 1rem);
+  border: 1.5px solid #E5E7EB;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--grey-dark);
+  background: #FAFBFC;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: clamp(70px, 8vw, 90px);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 }
