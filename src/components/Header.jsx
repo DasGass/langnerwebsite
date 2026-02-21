@@ -44,7 +44,7 @@ const Header = () => {
                     <Link to="/" className="logo">
                         <div className="logo-bg">
                             <img
-                                src="/images/logo/image-2.png"
+                                src={`${import.meta.env.BASE_URL}images/logo/image-2.png`}
                                 alt="Langner GM Logo"
                                 onError={(e) => {
                                     e.target.style.display = 'none';

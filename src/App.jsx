@@ -32,7 +32,7 @@ const ScrollToSection = () => {
 
 function App() {
     return (
-        <Router>
+        <Router basename="/Langner_Website/">
             <ScrollToSection />
             <div className="langner-landing-page">
                 <Topbar />

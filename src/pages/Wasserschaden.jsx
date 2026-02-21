@@ -79,7 +79,7 @@ const Wasserschaden = () => {
                             </p>
                         </div>
                         <div style={{ borderRadius: '12px', overflow: 'hidden', height: '100%', minHeight: '350px', background: 'var(--grey-bg)' }}>
-                            <img src="/images/hero/tims.jpg" alt="Wasserschadensanierung Notdienst Einsatz" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src={`${import.meta.env.BASE_URL}images/hero/tims.jpg`} alt="Wasserschaden Notdienst Einsatz" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                     </div>
                 </div>

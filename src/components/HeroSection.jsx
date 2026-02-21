@@ -51,7 +51,7 @@ const HeroSection = () => {
                     {/* Mobile hero image */}
                     <div className="hero-img hero-img-mobile">
                         <img
-                            src="/images/hero/tims.jpg"
+                            src={`${import.meta.env.BASE_URL}images/hero/tims.jpg`}
                             alt="Wasserschadensanierung"
                             onError={(e) => { e.target.style.background = '#F5F7FA'; e.target.style.height = '220px'; }}
                         />
@@ -94,7 +94,7 @@ const HeroSection = () => {
                 {/* Desktop hero image */}
                 <div className="hero-img hero-img-desktop">
                     <img
-                        src="/images/hero/tims.jpg"
+                        src={`${import.meta.env.BASE_URL}images/hero/tims.jpg`}
                         alt="Professionelle Wasserschadensanierung"
                         onError={(e) => { e.target.style.background = '#F5F7FA'; }}
                     />
