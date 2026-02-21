@@ -25,7 +25,7 @@ const ExtraServices = () => {
                     {extras.map((item, i) => (
                         <div className="extra-card" key={i}>
                             <span className="extra-icon">{item.icon}</span>
-                            <h4>{item.title}</h4>
+                            <h3>{item.title}</h3>
                         </div>
                     ))}
                 </div>

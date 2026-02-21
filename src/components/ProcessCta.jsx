@@ -7,23 +7,29 @@ const PhoneIcon = () => (
     </svg>
 );
 
+const WhatsAppIcon = () => (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </svg>
+);
+
 const ProcessCta = () => {
     return (
-        <div className="process-cta">
+        <section className="process-cta">
             <div className="container">
                 <h2>Bereit für eine schnelle Lösung?</h2>
                 <p>Kontaktieren Sie uns jetzt für eine kostenlose Erstberatung und schnelle Hilfe bei Ihrem Wasserschaden.</p>
                 <div className="process-cta-buttons">
-                    <a href="#kontakt" className="btn btn-white process-cta-btn-desktop">
-                        Jetzt Kontakt aufnehmen
+                    <a href="#rueckruf-form" className="btn btn-white">
+                        Angebot anfordern
                     </a>
-                    <a href="tel:+4901511202299" className="btn-primary-cta process-cta-btn-mobile">
-                        <PhoneIcon />
-                        Jetzt anrufen
+                    <a href="https://wa.me/4915112022996?text=Hallo,%20ich%20habe%20einen%20Wasserschaden%20und%20ben%C3%B6tige%20Hilfe." className="btn-primary-cta" target="_blank" rel="noopener noreferrer" style={{ background: 'transparent', border: '2px solid #fff', color: '#fff' }}>
+                        <WhatsAppIcon />
+                        WhatsApp schreiben
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

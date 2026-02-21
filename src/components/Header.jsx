@@ -35,10 +35,10 @@ const Header = () => {
                         <a href="#ablauf" className="nav-link">Ablauf</a>
                         <a href="#versicherung" className="nav-link">Versicherung</a>
                         <a href="#kontakt" className="nav-link">Kontakt</a>
-                        <a href="tel:+4901511202299" className="btn header-cta-btn">
+                        <a href="tel:+4915112022996" className="btn header-cta-btn">
                             <PhoneIcon />
-                            <span className="header-cta-text">Notdienst Anrufen</span>
-                            <span className="header-cta-text-mobile">Notdienst</span>
+                            <span className="header-cta-text">Jetzt anrufen</span>
+                            <span className="header-cta-text-mobile">Anrufen</span>
                         </a>
                     </nav>
                 </div>

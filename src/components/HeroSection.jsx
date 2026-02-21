@@ -14,6 +14,12 @@ const MailIcon = () => (
     </svg>
 );
 
+const WhatsAppIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+    </svg>
+);
+
 const HeroSection = () => {
     return (
         <section className="hero">
@@ -33,11 +39,13 @@ const HeroSection = () => {
 
                     {/* Desktop CTA */}
                     <div className="hero-actions">
-                        <a href="tel:+4901511202299" className="btn btn-lg">
-                            <PhoneIcon />
-                            Jetzt Hilfe anfordern
+                        <a href="#rueckruf-form" className="btn btn-lg">
+                            Angebot anfordern
                         </a>
-                        <a href="#versicherung" className="btn btn-lg btn-outline">Versicherungsfall?</a>
+                        <a href="https://wa.me/4915112022996?text=Hallo,%20ich%20habe%20einen%20Wasserschaden%20und%20ben%C3%B6tige%20Hilfe." className="btn btn-lg btn-outline" target="_blank" rel="noopener noreferrer">
+                            <WhatsAppIcon />
+                            WhatsApp schreiben
+                        </a>
                     </div>
 
                     {/* Mobile hero image */}
@@ -58,13 +66,12 @@ const HeroSection = () => {
 
                     {/* Mobile CTA stack */}
                     <div className="cta-stack">
-                        <a href="tel:+4901511202299" className="btn-primary-mobile">
-                            <PhoneIcon />
-                            Jetzt Hilfe anfordern – 0151 1202 2996
+                        <a href="#rueckruf-form" className="btn-primary-mobile">
+                            Angebot anfordern
                         </a>
-                        <a href="mailto:info@langner-gm.de" className="btn-secondary-mobile">
-                            <MailIcon />
-                            E-Mail: info@langner-gm.de
+                        <a href="https://wa.me/4915112022996?text=Hallo,%20ich%20habe%20einen%20Wasserschaden%20und%20ben%C3%B6tige%20Hilfe." className="btn-secondary-mobile" target="_blank" rel="noopener noreferrer">
+                            <WhatsAppIcon />
+                            WhatsApp schreiben
                         </a>
                     </div>
 

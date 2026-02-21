@@ -103,7 +103,7 @@ const ContactSection = () => {
                     </div>
 
                     {/* Contact form */}
-                    <div className="contact-form">
+                    <div className="contact-form" id="rueckruf-form">
                         <h3>Rückruf anfordern</h3>
                         <p>Hinterlassen Sie Ihre Daten – wir melden uns schnellstmöglich bei Ihnen.</p>
                         {!submitted ? (

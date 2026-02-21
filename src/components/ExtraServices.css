@@ -29,7 +29,7 @@
     flex-shrink: 0;
 }
 
-.extra-card h4 {
+.extra-card h3 {
     font-size: clamp(0.78rem, 0.5vw + 0.4rem, 0.9rem);
     font-weight: 600;
     color: var(--grey-dark);
