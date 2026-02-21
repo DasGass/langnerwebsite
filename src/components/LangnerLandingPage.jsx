@@ -9,6 +9,9 @@ import ProcessCta from './ProcessCta';
 import TrustBanner from './TrustBanner';
 import ContactSection from './ContactSection';
 import ExtraServices from './ExtraServices';
+import WasserschadenSection from './WasserschadenSection';
+import GebaudetrocknungSection from './GebaudetrocknungSection';
+import UeberUnsSection from './UeberUnsSection';
 import Footer from './Footer';
 
 const LangnerLandingPage = () => {
@@ -20,6 +23,9 @@ const LangnerLandingPage = () => {
         <HeroSection />
         <UspStrip />
         <ServicesGrid />
+        <WasserschadenSection />
+        <GebaudetrocknungSection />
+        <UeberUnsSection />
         <ProcessSection />
         <ProcessCta />
         <TrustBanner />

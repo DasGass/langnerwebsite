@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
@@ -16,14 +17,12 @@ const Footer = () => {
                     <div className="footer-col">
                         <h4>Leistungen</h4>
                         <ul>
-                            <li><a href="#leistungen">Wasserschadensanierung</a></li>
-                            <li><a href="#leistungen">Bautrocknung</a></li>
-                            <li><a href="#leistungen">Schimmelsanierung</a></li>
-                            <li><a href="#leistungen">Leckageortung</a></li>
-                            <li><a href="#leistungen">Fliesenlegen & Estrich</a></li>
-                            <li><a href="#leistungen">Renovierung</a></li>
-                            <li><a href="#leistungen">Solarreinigung</a></li>
-                            <li><a href="#leistungen">Grünpflege</a></li>
+                            <li><Link to="/wasserschaden">Wasserschadensanierung</Link></li>
+                            <li><Link to="/gebaeudetrocknung">Bautrocknung</Link></li>
+                            <li><Link to="/leistungen">Schimmelsanierung</Link></li>
+                            <li><Link to="/leistungen">Leckageortung</Link></li>
+                            <li><Link to="/leistungen">Fliesenlegen & Estrich</Link></li>
+                            <li><Link to="/leistungen">Renovierung</Link></li>
                         </ul>
                     </div>
                     <div className="footer-col">
@@ -39,8 +38,8 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <span>© 2026 Langner GM Gebäudemanagement. Alle Rechte vorbehalten.</span>
                     <span>
-                        <a href="#">Impressum</a> &nbsp;·&nbsp;
-                        <a href="#">Datenschutz</a>
+                        <Link to="/">Impressum</Link> &nbsp;·&nbsp;
+                        <Link to="/">Datenschutz</Link>
                     </span>
                 </div>
             </div>

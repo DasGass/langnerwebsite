@@ -135,6 +135,18 @@ ul {
   color: #fff;
 }
 
+.btn-outline-white {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  box-shadow: none;
+}
+
+.btn-outline-white:hover {
+  background: #fff;
+  color: var(--blue-dark);
+}
+
 .btn-white {
   background: #fff;
   color: var(--blue);
@@ -241,5 +253,82 @@ ul {
 @media (max-width: 767px) {
   .form-row {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   Team Cards & Typography Refinement
+   ══════════════════════════════════════════════ */
+.team-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #f0f2f5;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.team-card-img-wrap {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  background: var(--grey-bg);
+}
+
+@media (max-width: 767px) {
+  .team-card-img-wrap {
+    height: 320px;
+    /* Slightly shorter for mobile better balance */
+  }
+}
+
+.team-card-body {
+  padding: 1.5rem;
+  text-align: left;
+  /* Premium left alignment */
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.team-card-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--grey-dark);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.team-card-role {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.team-card-desc {
+  font-size: 0.95rem;
+  color: var(--grey-mid);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .team-card-body {
+    padding: 1.25rem;
+  }
+
+  .team-card-name {
+    font-size: 1.15rem;
   }
 }

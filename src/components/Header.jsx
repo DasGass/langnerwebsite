@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const PhoneIcon = ({ size = 15 }) => (
@@ -7,7 +8,30 @@ const PhoneIcon = ({ size = 15 }) => (
     </svg>
 );
 
+const MenuIcon = () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+);
+
+const CloseIcon = () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+);
+
 const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const location = useLocation();
+
+    // Close mobile menu on route change
+    React.useEffect(() => {
+        setIsMenuOpen(false);
+    }, [location]);
+
     return (
         <>
             {/* Mobile emergency bar */}
@@ -17,7 +41,7 @@ const Header = () => {
 
             <header className="header">
                 <div className="header-inner">
-                    <a href="#" className="logo">
+                    <Link to="/" className="logo">
                         <div className="logo-bg">
                             <img
                                 src="/images/logo/image-2.png"
@@ -29,18 +53,29 @@ const Header = () => {
                             />
                             <span className="logo-fallback" style={{ display: 'none' }}>Langner GM</span>
                         </div>
-                    </a>
-                    <nav className="header-nav">
-                        <a href="#leistungen" className="nav-link">Leistungen</a>
-                        <a href="#ablauf" className="nav-link">Ablauf</a>
-                        <a href="#versicherung" className="nav-link">Versicherung</a>
-                        <a href="#kontakt" className="nav-link">Kontakt</a>
+                    </Link>
+
+                    <nav className={`header-nav ${isMenuOpen ? 'open' : ''}`}>
+                        <NavLink to="/" className="nav-link">Startseite</NavLink>
+                        <NavLink to="/leistungen" className="nav-link">Leistungen</NavLink>
+                        <NavLink to="/wasserschaden" className="nav-link">Wasserschaden</NavLink>
+                        <NavLink to="/gebaeudetrocknung" className="nav-link">Gebäudetrocknung</NavLink>
+                        <NavLink to="/ueber-uns" className="nav-link">Über uns</NavLink>
+                        <NavLink to="/kontakt" className="nav-link">Kontakt</NavLink>
+                    </nav>
+
+                    <div className="header-actions">
                         <a href="tel:+4915112022996" className="btn header-cta-btn">
                             <PhoneIcon />
-                            <span className="header-cta-text">Jetzt anrufen</span>
-                            <span className="header-cta-text-mobile">Anrufen</span>
+                            <span className="header-cta-text">Notdienst 24/7</span>
+                            <span className="header-cta-text-mobile">Notdienst</span>
                         </a>
-                    </nav>
+
+                        {/* Burger Button for Mobile/Tablet */}
+                        <button className="burger-btn" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+                            {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+                        </button>
+                    </div>
                 </div>
             </header>
         </>

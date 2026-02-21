@@ -104,10 +104,9 @@
     }
 
     .service-card {
-        flex-direction: row;
-        align-items: center;
+        align-items: flex-start;
         gap: 1rem;
-        padding: 1.125rem;
+        padding: 1.5rem;
     }
 
     .service-card:hover {

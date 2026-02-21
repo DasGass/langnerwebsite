@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ServicesGrid.css';
 
 const services = [
@@ -101,6 +102,9 @@ const ServicesGrid = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+                <div style={{ textAlign: 'center', marginTop: 'clamp(2rem, 3vw, 3rem)' }}>
+                    <Link to="/kontakt#rueckruf-form" className="btn btn-lg">Angebot anfordern</Link>
                 </div>
             </div>
         </section>

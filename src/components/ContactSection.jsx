@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './ContactSection.css';
 
 const PhoneIcon = () => (
@@ -64,10 +65,31 @@ const damageTypes = [
 
 const ContactSection = () => {
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const form = useRef();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setSubmitted(true);
+        setLoading(true);
+        setError(null);
+
+        // Required EmailJS configuration: https://www.emailjs.com/
+        emailjs.sendForm(
+            'YOUR_SERVICE_ID', // Replace with EmailJS Service ID
+            'YOUR_TEMPLATE_ID', // Replace with EmailJS Template ID
+            form.current,
+            'YOUR_PUBLIC_KEY' // Replace with EmailJS Public Key
+        ).then(
+            () => {
+                setLoading(false);
+                setSubmitted(true);
+            },
+            () => {
+                setLoading(false);
+                setError('Ein Fehler ist aufgetreten. Bitte rufen Sie uns stattdessen an.');
+            }
+        );
     };
 
     return (
@@ -106,21 +128,26 @@ const ContactSection = () => {
                     <div className="contact-form" id="rueckruf-form">
                         <h3>Rückruf anfordern</h3>
                         <p>Hinterlassen Sie Ihre Daten – wir melden uns schnellstmöglich bei Ihnen.</p>
+                        {error && (
+                            <p style={{ color: '#D97706', fontSize: '0.85rem', marginTop: '-0.5rem', marginBottom: '1rem' }}>
+                                ⚠️ {error}
+                            </p>
+                        )}
                         {!submitted ? (
-                            <form onSubmit={handleSubmit} id="contact-form">
+                            <form ref={form} onSubmit={handleSubmit} id="contact-form">
                                 <div className="form-row">
                                     <div className="form-group">
                                         <label htmlFor="contact-name">Name *</label>
-                                        <input type="text" id="contact-name" placeholder="Ihr Name" required />
+                                        <input type="text" id="contact-name" name="user_name" placeholder="Ihr Name" required />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="contact-phone">Telefon *</label>
-                                        <input type="tel" id="contact-phone" placeholder="Ihre Telefonnummer" required />
+                                        <input type="tel" id="contact-phone" name="user_phone" placeholder="Ihre Telefonnummer" required />
                                     </div>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="contact-type">Art des Schadens</label>
-                                    <select id="contact-type">
+                                    <select id="contact-type" name="damage_type">
                                         {damageTypes.map((type) => (
                                             <option key={type.value} value={type.value}>{type.label}</option>
                                         ))}
@@ -128,17 +155,17 @@ const ContactSection = () => {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="contact-message">Beschreibung (optional)</label>
-                                    <textarea id="contact-message" placeholder="Beschreiben Sie kurz Ihr Anliegen..." />
+                                    <textarea id="contact-message" name="message" placeholder="Beschreiben Sie kurz Ihr Anliegen..." />
                                 </div>
-                                <button type="submit" className="btn btn-lg contact-submit-btn">
-                                    Rückruf anfordern
+                                <button type="submit" className="btn btn-lg contact-submit-btn" disabled={loading} style={{ opacity: loading ? 0.7 : 1 }}>
+                                    {loading ? 'Wird gesendet...' : 'Rückruf anfordern'}
                                 </button>
                             </form>
                         ) : (
                             <div className="form-success">
                                 <span className="form-success-icon">✅</span>
                                 <h3>Vielen Dank!</h3>
-                                <p>Wir haben Ihre Anfrage erhalten und melden uns schnellstmöglich bei Ihnen.</p>
+                                <p>Wir melden uns kurzfristig bei Ihnen.</p>
                             </div>
                         )}
                     </div>
