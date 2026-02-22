@@ -83,7 +83,7 @@ const Gebaeudetrocknung = () => {
                             </p>
                         </div>
                         <div style={{ borderRadius: '12px', overflow: 'hidden', height: '100%', minHeight: '350px', background: 'var(--grey-bg)' }}>
-                            <img src={`${import.meta.env.BASE_URL}images/hero/upscalemedia-transformed.jpeg`} alt="Professionelle Gebäudetrocknung" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src={`${import.meta.env.BASE_URL}images/new-photos/WhatsApp Image 2025-09-27 at 14.58.44.jpeg`} alt="Das Team von Langner Gebäudemanagement" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                     </div>
                 </div>
